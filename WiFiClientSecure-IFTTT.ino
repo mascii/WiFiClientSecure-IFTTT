@@ -1,5 +1,6 @@
 #include "config.h" // Wifi and IFTTT
 #include "certificate.h" // IFTTT
+#include <WiFi.h>
 #include <WiFiClientSecure.h>
 
 const int inputPir = 5; // IO5
