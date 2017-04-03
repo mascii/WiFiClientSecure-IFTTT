@@ -9,7 +9,6 @@ bool outputState = true;
 unsigned long t = 0; // Time
 
 const char* server = "maker.ifttt.com";  // Server URL
-const String url = "/trigger/" + makerEvent + "/with/key/" + makerKey;
 
 WiFiClientSecure client;
 
@@ -63,6 +62,8 @@ void send() {
   } else {
     Serial.println("Connected to server!");
     // Make a HTTP request:
+    String url = "/trigger/" + makerEvent + "/with/key/" + makerKey;
+    // url += "?value1=VALUE1";
     client.println("GET " + url + " HTTP/1.1");
     client.print("Host: ");
     client.println(server);
